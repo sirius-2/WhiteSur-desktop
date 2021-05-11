@@ -38,6 +38,13 @@ Pull source from remote repository to start an install
 ```
 <details>
   <summary>More</summary>
+<blockquote>
+<p>Dash to dock theme</p>
+</blockquote>
+<pre>
+cd WhiteSur-gtk-theme && sudo chmod +x tweaks.sh
+./tweaks.sh --dash-to-dock -d
+</pre>
   <h3>Debug</h3>
 <pre>
 ./setup.sh -d
