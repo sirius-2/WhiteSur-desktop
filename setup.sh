@@ -2,9 +2,9 @@
 
 mydebug()
 {
-gsettings set org.gnome.desktop.interface gtk-theme Default
-gsettings set org.gnome.desktop.interface icon-theme default
-gsettings set org.gnome.desktop.interface cursor-theme Adwaita
+gsettings set org.gnome.desktop.interface gtk-theme Yaru
+gsettings set org.gnome.desktop.interface icon-theme Yaru
+gsettings set org.gnome.desktop.interface cursor-theme Yaru
 gsettings set org.gnome.desktop.wm.preferences button-layout ':maximize,minimize,close'
 }
 
