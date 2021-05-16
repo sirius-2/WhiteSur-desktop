@@ -68,12 +68,12 @@ manual()
 if [[ ! -d $cursor_tgdir/$cursor_dir ]];then
 	if [[ ! $(mkdir -p $cursor_tgdir) ]] && [[ -d $cursor_dir ]];then
 		cp -rf $cursor_dir $cursor_tgdir
-		return true
+		return 1
 	else
-		return false
+		return 0
 	fi
 else
-	return true
+	return 1
 fi
 }
 
@@ -85,7 +85,8 @@ gsettings set org.gnome.desktop.interface gtk-theme $theme_dir
 gsettings set org.gnome.desktop.interface icon-theme $icon_dir
 
 # cursor
-if [[ manual ]];then gsettings set org.gnome.desktop.interface cursor-theme $cursor_dir;fi
+manual
+if [[ $? == '1' ]];then gsettings set org.gnome.desktop.interface cursor-theme $cursor_dir;fi
 
 # window button - to left
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
