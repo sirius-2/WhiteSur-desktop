@@ -15,6 +15,10 @@ sh -c "$(curl -fSsL https://raw.githubusercontents.com/sirius-2/tools/osx-beauti
 </pre>
 </details>
 
+
+> Preview
+![Preview](./Preview.jpg)
+
 ### Manual
 ```
 git clone https://github.com/sirius-2/tools.git -b osx-beautify
