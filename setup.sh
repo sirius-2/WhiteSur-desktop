@@ -5,6 +5,7 @@ mydebug()
 gsettings set org.gnome.desktop.interface gtk-theme Yaru
 gsettings set org.gnome.desktop.interface icon-theme Yaru
 gsettings set org.gnome.desktop.interface cursor-theme Yaru
+gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/adwaita-day.png
 gsettings set org.gnome.desktop.wm.preferences button-layout ':maximize,minimize,close'
 }
 
@@ -23,10 +24,14 @@ icon_dir='WhiteSur'
 
 # cursor - macOSBigSur - built
 cursor_dir='macOSBigSur'
+cursor_tgdir=$HOME/.icons
+
+# wallpaper
+wallpaper_tgdir=$HOME/.local/share/backgrounds
+wallpaper_png='wallpaper.png'
 
 # other
 c_dir=$(pwd)
-cursor_tgdir=$HOME/.icons
 stablesource=./builds/surbuilds.tar.xz
 }
 
@@ -63,7 +68,7 @@ use_stable()
 	fi
 }
 
-manual()
+mycursor()
 {
 if [[ ! -d $cursor_tgdir/$cursor_dir ]];then
 	if [[ ! $(mkdir -p $cursor_tgdir) ]] && [[ -d $cursor_dir ]];then
@@ -85,8 +90,13 @@ gsettings set org.gnome.desktop.interface gtk-theme $theme_dir
 gsettings set org.gnome.desktop.interface icon-theme $icon_dir
 
 # cursor
-manual
+mycursor 
 if [[ $? == '1' ]];then gsettings set org.gnome.desktop.interface cursor-theme $cursor_dir;fi
+
+# wallpaper
+mkdir -p $wallpaper_tgdir && cp -f $wallpaper_png $wallpaper_tgdir
+if [[ $? == '0' ]];then gsettings set org.gnome.desktop.background picture-uri "file://$wallpaper_tgdir/$wallpaper_png";fi
+
 
 # window button - to left
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'

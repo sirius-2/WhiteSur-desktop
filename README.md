@@ -17,7 +17,7 @@ sh -c "$(curl -fSsL https://raw.githubusercontents.com/sirius-2/tools/osx-beauti
 
 
 > Preview
-![Preview](./Preview.jpg)
+![Preview](./docs/Preview.jpg)
 
 ### Manual
 ```
