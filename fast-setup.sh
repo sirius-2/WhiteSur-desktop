@@ -2,7 +2,7 @@
 
 if [ -f /usr/bin/git ];then
 	if [ ! -d tools ];then
-		git clone https://github.com/sirius-2/tools.git -b osx-beautify
+		git clone https://github.com/sirius-2/tools.git -b beautify-gtk
 	fi
         if [ $? -eq 0 ];then
                 cd tools && sudo chmod +x setup.sh
