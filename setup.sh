@@ -17,12 +17,11 @@ source_list=(${kde_theme} ${kde_icon} ${kde_cursor})
 pull_source(){
     mkdir -p ${kde_source_dir}
     if [[ $1 ]];then baseurl="$1";fi
-    echo "[ + ] Pulling from $baseurl : arg is $1"
+    echo "[ + ] Pulling from $baseurl"
     for l in "${source_list[@]}"
     do
         if [[ ! -f ${kde_source_dir}/${l}/install.sh ]];then
             sudo rm -rf ${kde_source_dir}/${l}
-
             git clone https://${baseurl}/${name}/${l}.git ${kde_source_dir}/${l}
         else
             echo "[ + ] Found ${l}"
@@ -37,16 +36,23 @@ handle(){
     for l in "${source_list[@]}"
     do
         cd ${kde_source_dir}/${l}
+        # handle sddm
+        if [[ ${l} == 'WhiteSur-kde' ]];then
+            cd sddm && sudo ./install.sh
+            cd ..
+        fi
         sudo ./install.sh && cd ../..
+
     done
+
+
+
 }
 
 apply(){
     # theme
     echo "[ + ] Setting theme to $1"
-    lookandfeeltool -a $1
-
-    #/usr/bin/plasma-apply-desktoptheme $1
+    /usr/bin/plasma-apply-lookandfeel -a $1
 
     # icons
     echo "[ + ] Setting icon theme to $2"
