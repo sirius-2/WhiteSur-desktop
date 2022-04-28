@@ -1,7 +1,7 @@
 #!/bin/bash
 
 baseurl='github.com'
-#baseurl='hub.fastgit.xyz'
+mirror_baseurl='hub.fastgit.xyz'
 
 name='vinceliuice'
 
@@ -53,6 +53,7 @@ apply(){
     # theme
     echo "[ + ] Setting theme to $1"
     /usr/bin/plasma-apply-lookandfeel -a $1
+    #/usr/bin/plasma-apply-desktoptheme $1
 
     # icons
     echo "[ + ] Setting icon theme to $2"
@@ -82,7 +83,11 @@ case $1 in
         apply com.github.vinceliuice.WhiteSur WhiteSur WhiteSur-cursors /usr/share/wallpapers/WhiteSur/contents/images/2560x1440.png
         ;;
     -m | --mirror-install)
-        pull_source $2
+        if [[ ! $2 ]];then
+            pull_source ${mirror_baseurl}
+        else
+            pull_source $2
+        fi
         handle
         apply com.github.vinceliuice.WhiteSur WhiteSur WhiteSur-cursors /usr/share/wallpapers/WhiteSur/contents/images/2560x1440.png
         ;;
