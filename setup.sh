@@ -42,11 +42,7 @@ handle(){
             cd ..
         fi
         sudo ./install.sh && cd ../..
-
     done
-
-
-
 }
 
 apply(){
