@@ -6,12 +6,12 @@
 ## Usage
 > Oneline Start
 ```
-sh -c "$(curl -fSsL https://raw.githubusercontents.com/sirius-2/tools/beautify-gtk/fast-setup.sh)"
+sh -c "$(curl -fSsL https://raw.githubusercontents.com/sirius-2/WhiteSur-desktop/beautify-gtk/fast-setup.sh)"
 ```
 <details>
   <summary>Use mirror</summary>
 <pre>
-sh -c "$(curl -fSsL https://raw.githubusercontents.com/sirius-2/tools/beautify-gtk/fast-setup.sh | sed 's/github.com/github.com.cnpmjs.org/g')"
+sh -c "$(curl -fSsL https://raw.githubusercontents.com/sirius-2/WhiteSur-desktop/beautify-gtk/fast-setup.sh | sed 's/github.com/github.com.cnpmjs.org/g')"
 </pre>
 </details>
 
