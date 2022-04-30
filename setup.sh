@@ -8,11 +8,12 @@ name='vinceliuice'
 kde_theme='WhiteSur-kde'
 kde_icon='WhiteSur-icon-theme'
 kde_cursor='WhiteSur-cursors'
+kde_firefox='WhiteSur-firefox-theme'
 
 kde_source_dir='kde_source'
 
 c_dir=`pwd`
-source_list=(${kde_theme} ${kde_icon} ${kde_cursor})
+source_list=(${kde_theme} ${kde_icon} ${kde_cursor} ${kde_firefox})
 
 pull_source(){
     mkdir -p ${kde_source_dir}
@@ -40,6 +41,8 @@ handle(){
         if [[ ${l} == 'WhiteSur-kde' ]];then
             cd sddm && sudo ./install.sh
             cd ..
+        elif [[ ${l} == 'WhiteSur-firefox-theme' ]];then
+            if [[ $(ls /usr/share/applications | grep firefox) ]];then ./install.sh -f monterey;fi
         fi
         sudo ./install.sh && cd ../..
     done
