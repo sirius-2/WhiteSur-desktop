@@ -46,6 +46,7 @@ handle(){
         fi
         sudo ./install.sh && cd ../..
     done
+    if [[ -d 'com.github.vinceliuice.WhiteSurMod' ]];then sudo cp -rf com.github.vinceliuice.WhiteSurMod /usr/share/plasma/look-and-feel/;fi
 }
 
 apply(){
@@ -73,8 +74,18 @@ case $1 in
         handle
         apply com.github.vinceliuice.WhiteSur WhiteSur WhiteSur-cursors /usr/share/wallpapers/WhiteSur/contents/images/2560x1440.png
         ;;
+    -o | --mod)
+        pull_source
+        handle
+        if [[ -d '/usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSurMod' ]];then
+            apply com.github.vinceliuice.WhiteSurMod WhiteSur WhiteSur-cursors /usr/share/wallpapers/WhiteSur/contents/images/2560x1440.png
+        else
+           apply com.github.vinceliuice.WhiteSur WhiteSur WhiteSur-cursors /usr/share/wallpapers/WhiteSur/contents/images/2560x1440.png
+           echo '[ - ] use official instead' && exit 1
+        fi
+        ;;
     -d | --debug)
-        apply org.kde.breezetwilight.desktop breeze breeze_cursors /usr/share/wallpapers/Bamboo/contents/images/5120x2880.png
+        apply org.kde.breezetwilight.desktop breeze breeze_cursors /usr/share/wallpapers/Autumn/contents/images/1920x1080.jpg
         ;;
     -f | --fast-install)
         pull_source hub.fastgit.xyz
@@ -96,6 +107,7 @@ cat<<EOF
 
 arg:
     -i | --install         install theme
+    -o | --mod             install official theme and mod theme with 2 beautified panels
     -d | --debug           restore default theme
     -f | --fast-install    fast install
     -m | --mirror-install  use custom github mirror eg. -m mirror.xxx

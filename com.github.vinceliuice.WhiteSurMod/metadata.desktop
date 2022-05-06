@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment=stuart
+Encoding=UTF-8
+Keywords=Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;
+Name=WhiteSurMod
+Type=Service
+X-KDE-ParentApp=
+X-KDE-PluginInfo-Author=Vince Liuice
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Email=vinceliuice@hotmail.com
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=GPL3.0
+X-KDE-PluginInfo-Name=com.github.vinceliuice.WhiteSurMod
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=https://github.com/vinceliuice/WhiteSur-kde
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+X-KDE-fallbackPackage=org.kde.breeze.desktop
+X-KPackage-Dependencies=kns://colorschemes.knsrc/api.kde-look.org/1398831,kns://plasma-themes.knsrc/api.kde-look.org/1398837,kns://aurorae.knsrc/api.kde-look.org/1398835,kns://wallpaper.knsrc/api.kde-look.org/1398833,kns://sddmtheme.knsrc/api.kde-look.org/1398839,kns://icons.knsrc/api.kde-look.org/1405756,kns://xcursor.knsrc/api.kde-look.org/1411743,kns://latte-indicators.knsrc/api.kde-look.org/1399205
+X-Plasma-MainScript=defaults
