@@ -1,4 +1,6 @@
 # Theme for Plasma
+> 到外观设置[左下]勾选使用主题布局启用最佳效果   
+
 Usage:
 > Oneline Start
 ```
